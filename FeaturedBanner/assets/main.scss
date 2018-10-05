@@ -64,7 +64,7 @@
     text-transform: uppercase;
     z-index: 3;
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 22px;
     color: #ffffff;
     font-weight: bold;
@@ -193,6 +193,97 @@
       }
       &:after{
         margin-left: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .featured-banner{
+    & > div{
+      height: 600px;
+      & > div{
+        padding: 6px 10px;
+        line-height: initial;
+      }
+    }
+    & > div.active h2{
+      font-size: 20px;
+      p{
+        padding: 14px 0 4px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .featured-banner > div.active{
+    flex-grow: 12;
+  }
+}
+@media screen and (max-width: 800px) {
+  .featured-banner {
+    flex-direction: column;
+    & > div {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 30px;
+      flex-basis: auto;
+      height: auto;
+      transition: opacity 0s ease-in-out;
+      & > div {
+        position: relative;
+        background: transparent;
+      }
+      .circle{
+        text-align: center;
+        left: 4px;
+        height: 100%;
+        bottom: 0;
+        width: 21px;
+        span{
+          margin-top: 30px;
+          margin-left: 0 !important;
+          &:after, &:before{
+            width: 1px;
+            height: 100%;
+          }
+          &:after{
+            top: 44px;
+            left: 50% !important;
+            margin-left: 0 !important;
+          }
+          &:before{
+            margin-left: 0;
+            right: auto;
+            left: 50%;
+            margin-right: 0;
+            bottom: calc(100% - 30px) !important;
+            top: auto;
+          }
+        }
+      }
+    }
+    .details {
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.5s linear;
+      & > img {
+        display: none;
+      }
+    }
+    & > div.active {
+      .scrollbar-inner {
+        height: auto;
+      }
+      .details{
+        max-height: 1000px;
+      }
+      .circle{
+        span{
+          &:after{
+            top: 47px;
+          }
+        }
       }
     }
   }
