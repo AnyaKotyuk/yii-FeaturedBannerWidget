@@ -22,6 +22,7 @@ function slideFeaturedBanner(el) {
     let startEl = $('.featured-banner > div:first-child');
 
     let intervalId = setInterval(function(){
+        if ($(window).width() < 800) return;
         if (typeof el == 'undefined' || el.length == 0) el = startEl;
         el = slideFeaturedBanner(el);
     }, 5000, startEl)
